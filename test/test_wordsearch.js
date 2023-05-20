@@ -35,4 +35,42 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+
+  it("should return false if the array is empty", function() {
+    const result = wordSearch([], 'SEINFELD')
+    assert.isFalse(result);
+  });
+
+  it("should return true if the word is present and 4 letters long", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['S', 'E', 'F', 'I', 'S', 'H', 'L', 'D'],
+      ['Y', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['H', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'FISH')
+
+    assert.isTrue(result);
+  });
+
+  it("should return true if the word is present vertically", function() {
+    const result = wordSearch([
+      ['S', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['E', 'E', 'I', 'N', 'F', 'O', 'L', 'D'],
+      ['I', 'F', 'C', 'F', 'Q', 'U', 'A', 'L'],
+      ['N', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['F', 'H', 'C', 'S', 'Y', 'E', 'R', 'L'],
+      ['E', 'F', 'R', 'E', 'N', 'E', 'Y', 'B'],
+      ['L', 'B', 'T', 'W', 'A', 'P', 'A', 'I'],
+      ['D', 'D', 'C', 'A', 'K', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'Q', 'U', 'A', 'L'],
+    ], 'SEINFELD')
+
+    assert.isTrue(result);
+  });
+  
 });
